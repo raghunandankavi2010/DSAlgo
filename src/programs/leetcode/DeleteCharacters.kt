@@ -39,10 +39,7 @@ package programs.leetcode
 fun main() {
     val output = makeFancyString("aaabaaaa")
     println(output)
-
 }
-
-
 
 private fun makeFancyString(s: String): String {
     if(s.isEmpty()) return ""
