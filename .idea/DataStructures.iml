@@ -11,5 +11,6 @@
     <orderEntry type="library" name="jetbrains.kotlin.stdlib" level="project" />
     <orderEntry type="library" name="KotlinJavaRuntime" level="project" />
     <orderEntry type="library" name="jetbrains.kotlin.stdlib.jdk8" level="project" />
+    <orderEntry type="library" name="bluecatcode.junit.4.10.extended" level="project" />
   </component>
 </module>
