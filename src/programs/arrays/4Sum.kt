@@ -7,6 +7,7 @@ data class Quadrets(val first: Int, val second: Int, val third: Int, val fourth:
 
 fun main() {
     val inputArray = intArrayOf(1, 0, -1, 0, -2, 2)
+
     val target = 2
 
     Arrays.sort(inputArray)
