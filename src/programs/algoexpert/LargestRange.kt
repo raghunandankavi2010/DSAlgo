@@ -40,3 +40,48 @@ private fun largestRange(array: List<Int>): List<Int> {
 
     return longestRange
 }
+
+private fun largestRangeOptimized(array: List<Int>): Pair<Int, Int> {
+    if (array.isEmpty()) {
+        return Pair(-1,-1)
+    }
+
+    var longestRange = emptyList<Int>()
+    var maxLength = 0
+
+    val numMap = mutableMapOf<Int, Boolean>()
+    for (num in array) {
+        numMap[num] = false
+    }
+
+    for (num in array) {
+        if (numMap[num] == true) {
+            continue
+        }
+
+        numMap[num] = true
+        var currentLength = 1
+
+        var left = num - 1
+        while (numMap.containsKey(left)) {
+            numMap[left] = true // Mark as visited
+            currentLength++
+            left--
+        }
+
+        var right = num + 1
+        while (numMap.containsKey(right)) {
+            numMap[right] = true // Mark as visited
+            currentLength++
+            right++
+        }
+
+        if (currentLength > maxLength) {
+            maxLength = currentLength
+            longestRange = listOf(left + 1, right - 1)
+        }
+    }
+
+    return Pair(longestRange[0],longestRange[1])
+
+}
