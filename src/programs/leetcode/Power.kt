@@ -5,17 +5,18 @@ import kotlin.math.abs
 var res = 0.0
 fun main() {
     val output = pow(2.0,5)
-    println(output)
+    val res = iterativeApproach(2.0,-2)
+    println(res)
 }
 
-fun pow(x: Double, n: Int): Double {
+private fun pow(x: Double, n: Int): Double {
 
    res =  helper(x,abs(n))
-    if(n >=0) return res else return 1/res
+    return if(n >=0) res else 1/res
 
 }
 
-fun helper(x: Double, n: Int): Double {
+private fun helper(x: Double, n: Int): Double {
     if(x == 0.0) return 0.0
     if(n== 0) return 1.0
     res = helper(x, n/2)
@@ -25,4 +26,13 @@ fun helper(x: Double, n: Int): Double {
     } else {
         x * res
     }
+}
+
+private fun iterativeApproach(x: Double, n: Int): Double {
+    var res = 1.0
+    repeat(abs(n)) {
+            res *= x
+    }
+    return if(n >= 0)  res else  1/res
+
 }
