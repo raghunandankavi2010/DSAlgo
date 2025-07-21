@@ -13,7 +13,6 @@ fun threeSum(nums: IntArray): List<List<Int>> {
     val listOfList = ArrayList<List<Int>>()
     for( i in nums.indices) {
         if(i > 0 && nums[i] == nums[i-1]) continue
-        val firstNumber = nums[i]
         val target = 0 - nums[i]
         var left = i + 1
         var right = nums.size - 1
