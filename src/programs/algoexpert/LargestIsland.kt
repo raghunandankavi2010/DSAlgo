@@ -96,9 +96,3 @@ private fun markIslandAndGetSize(grid: Array<IntArray>, r: Int, c: Int, islandId
 
     return size
 }
-
-private fun printGrid(grid: Array<IntArray>) {
-    for (row in grid) {
-        println(row.joinToString(" "))
-    }
-}
