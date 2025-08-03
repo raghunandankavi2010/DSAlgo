@@ -3,8 +3,10 @@ package programs.leetcode
 fun main() {
     val n = 5
     val dp = Array(n) { 0 }
+    val recursive = climbStairsRecursive(n, dp)
+    println(recursive)
     val output = climbStairsIterative(n)
-    print(output)
+    println(output)
 }
 
 
