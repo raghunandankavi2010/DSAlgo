@@ -3,90 +3,87 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package programs.lists;
+package programs.lists
 
+import programs.lists.LinkedListReverse.Node
 
-/**
- * @author Raghunandan
- */
-public class LinkedListReverse {
+class LinkedListReverse {
+    private var head: Node? = null
 
-    private Node head;
-
-    private static class Node {
-        private int value;
-        private Node next;
-
-        Node(int value) {
-            this.value = value;
-            this.next = null;
-        }
+    class Node(val value: Int) {
+        var next: Node? = null
     }
 
-    private void addToTheLast(Node node) {
-
+    fun addToTheLast(node: Node?) {
         if (head == null) {
-            head = node;
+            head = node
         } else {
-            Node temp = head;
-            while (temp.next != null)
-                temp = temp.next;
+            var temp = head
+            while (temp?.next != null) temp = temp.next
 
-            temp.next = node;
+            temp?.next = node
         }
     }
 
 
-    private void printList(Node head) {
-        Node temp = head;
+    fun printList(head: Node?) {
+        var temp = head
         while (temp != null) {
-            System.out.format("%d ", temp.value);
-            temp = temp.next;
+            System.out.format("%d ", temp.value)
+            temp = temp.next
         }
-        System.out.println();
+        println()
     }
 
-    // Reverse linkedlist using this function
-    public static Node reverseLinkedList(Node currentNode) {
-// For first node, previousNode will be null
-        Node previousNode = null;
-        Node nextNode;
+
+    fun reverseLinkedList(currentNode: Node?): Node? {
+        var currentNode = currentNode
+        var previousNode: Node? = null
+        var nextNode: Node?
         while (currentNode != null) {
-            nextNode = currentNode.next;
-            // reversing the link
-            //if(previousNode!=null)
-            //System.out.println("value"+previousNode.value);
-            currentNode.next = previousNode;
-            // moving currentNode and previousNode by 1 node
-            previousNode = currentNode;
-            if (currentNode != null)
-                System.out.println("current node" + currentNode.value);
-            if (previousNode != null)
-                System.out.println("previous node after plus " + previousNode.value);
-            currentNode = nextNode;
-            if (currentNode != null)
-                System.out.println("current node after plus " + currentNode.value);
+            nextNode = currentNode.next
+            currentNode.next = previousNode
+            previousNode = currentNode
+            currentNode = nextNode
         }
-        return previousNode;
+        return previousNode
     }
 
-    public static void main(String[] args) {
-        LinkedListReverse list = new LinkedListReverse();
-        // Creating a linked list
-        Node head = new Node(1);
-        list.addToTheLast(head);
-        list.addToTheLast(new Node(0));
-        list.addToTheLast(new Node(1));
-       /* list.addToTheLast(new Node(1));*/
-        /*    list.addToTheLast(new Node(2));*/
+    fun reverseLinkedListRecursion(currentNode: Node?): Node? {
 
-        list.printList(head);
-        //Reversing LinkedList
-      /*  Node reverseHead = reverseLinkedList(head);
-        System.out.println("After reversing");
-        list.printList(reverseHead);*/
+        if(currentNode == null || currentNode.next == null) {
+            return currentNode
+        }
+
+        val node = reverseLinkedListRecursion(currentNode.next)
+
+        currentNode.next?.next = currentNode
+
+        currentNode.next = null
+
+        return node
 
     }
+
+
+}
+
+fun main() {
+    val list = LinkedListReverse()
+    // Creating a linked list
+    val head = Node(1)
+    list.addToTheLast(head)
+    list.addToTheLast(Node(0))
+    list.addToTheLast(Node(1))
+    list.addToTheLast( Node(1))
+    list.addToTheLast( Node(2))
+    list.printList(head)
+    println("After reversing Iterative")
+    val newHead = list.reverseLinkedList(head)
+    list.printList(newHead)
+    val reverseHead = list.reverseLinkedListRecursion(head)
+    println("After reversing recursive")
+    list.printList(reverseHead)
 }
 
 
