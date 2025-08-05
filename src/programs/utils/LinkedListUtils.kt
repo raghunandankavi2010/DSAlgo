@@ -19,3 +19,15 @@ fun LinkedList?.printList() {
     listStr.append("null")
     println(listStr.toString())
 }
+
+fun createList(values: List<Int>): LinkedList? {
+    if (values.isEmpty()) return null
+    val head = LinkedList(values.first())
+    var current = head
+    for (i in 1 until values.size) {
+        current.next = LinkedList(values[i])
+        current = current.next!!
+    }
+    return head
+}
+

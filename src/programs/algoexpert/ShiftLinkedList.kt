@@ -2,6 +2,7 @@ package programs.algoexpert
 
 import programs.utils.LinkedList
 import programs.utils.printList
+import programs.utils.createList
 
 fun main() {
     val head = createList(listOf(1, 2, 3, 4, 5, 6))
@@ -57,14 +58,3 @@ private fun shiftLinkedList(head: LinkedList?, k: Int): LinkedList? {
 }
 
 // Helper function to create a list from values
-private fun createList(values: List<Int>): LinkedList? {
-    if (values.isEmpty()) return null
-    val head = LinkedList(values.first())
-    var current = head
-    for (i in 1 until values.size) {
-        current.next = LinkedList(values[i])
-        current = current.next!!
-    }
-    return head
-}
-
