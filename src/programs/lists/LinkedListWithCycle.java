@@ -104,16 +104,16 @@ public class LinkedListWithCycle {
     }
     /**
      * Definition for singly-linked list.
-     * class ListNode {
+     * class LinkedList {
      *     public int val;
-     *     public ListNode next;
-     *     ListNode(int x) { val = x; next = null; }
+     *     public LinkedList next;
+     *     LinkedList(int x) { val = x; next = null; }
      * }
      */
 /*    public class Solution {
-        public ListNode detectCycle(ListNode a) {
-            ListNode fast = a;
-            ListNode slow = a;
+        public LinkedList detectCycle(LinkedList a) {
+            LinkedList fast = a;
+            LinkedList slow = a;
             boolean hasCycle = false;
             while(fast != null && fast.next != null && slow != null){
                 fast = fast.next.next;

@@ -2,13 +2,13 @@ package programs.algoexpert
 
 import java.util.*
 
-class LinkedListNode(val name: String) {
-    val children = mutableListOf<LinkedListNode>()
+class LinkedLinkedList(val name: String) {
+    val children = mutableListOf<LinkedLinkedList>()
 
     fun depthFirstSearch(): List<String> {
         val resultList = mutableListOf<String>()
 
-        val stack = ArrayDeque<LinkedListNode>()
+        val stack = ArrayDeque<LinkedLinkedList>()
 
         stack.addFirst(this)
 
@@ -25,8 +25,8 @@ class LinkedListNode(val name: String) {
     }
 
 
-    fun addChild(name: String): LinkedListNode {
-        val childNode = LinkedListNode(name)
+    fun addChild(name: String): LinkedLinkedList {
+        val childNode = LinkedLinkedList(name)
         children.add(childNode)
         return this
     }
@@ -42,7 +42,7 @@ fun main() {
     //     /     / \
     //    E     F   G
     //
-    val graph = LinkedListNode("A")
+    val graph = LinkedLinkedList("A")
     graph.addChild("B").addChild("C").addChild("D")
     graph.children[0].addChild("E")
     graph.children[2].addChild("F").addChild("G")

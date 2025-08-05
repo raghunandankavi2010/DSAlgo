@@ -1,6 +1,7 @@
 package programs.algoexpert
 
 import programs.utils.LinkedList
+import programs.utils.printList
 
 fun removeDuplicatesFromLinkedList(linkedList: LinkedList): LinkedList {
     var currentNode: LinkedList? = linkedList
@@ -18,20 +19,6 @@ fun removeDuplicatesFromLinkedList(linkedList: LinkedList): LinkedList {
 }
 
 
-fun printList(head: LinkedList?) {
-    if (head == null) {
-        println("List is empty.")
-        return
-    }
-    var current: LinkedList? = head
-    val listStr = StringBuilder()
-    while (current != null) {
-        listStr.append("${current.value} -> ")
-        current = current.next
-    }
-    listStr.append("null")
-    println(listStr.toString())
-}
 
 
 
@@ -49,12 +36,12 @@ fun main() {
     head.next!!.next!!.next!!.next!!.next!!.next!!.next = LinkedList(6)
 
     println("Original List:")
-    printList(head)
+   head.printList()
 
     val listWithoutDuplicates = removeDuplicatesFromLinkedList(head)
 
     println("\nList after removing duplicates:")
-    printList(listWithoutDuplicates)
+    listWithoutDuplicates.printList()
 
     println("\nExpected final output: 1 -> 3 -> 4 -> 5 -> 6 -> null")
 }
