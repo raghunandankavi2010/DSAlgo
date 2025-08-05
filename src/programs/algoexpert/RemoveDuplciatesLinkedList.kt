@@ -1,5 +1,7 @@
 package programs.algoexpert
 
+import programs.utils.LinkedList
+
 fun removeDuplicatesFromLinkedList(linkedList: LinkedList): LinkedList {
     var currentNode: LinkedList? = linkedList
 
