@@ -1,8 +1,6 @@
 package programs.algoexpert
 
-open class LinkedList(var value: Int) {
-    var next: LinkedList? = null
-}
+import programs.utils.LinkedList
 
 fun printLinkedList(head: LinkedList?) {
     if (head == null) {
