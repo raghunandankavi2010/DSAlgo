@@ -36,5 +36,6 @@ fun main() {
         }
     }
 
-    println("$map")
+
+    println("${map.values.toList()}")
 }
