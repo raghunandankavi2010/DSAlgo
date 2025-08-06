@@ -18,13 +18,13 @@ fun convert(input: String): String {
     val sb = StringBuilder()
     for ((index, value) in input.withIndex()){
         if(Character.isLowerCase(value)){
-            sb.append(value.toLowerCase())
+            sb.append(value.lowercaseChar())
         }else {
             if(index==0){
-                sb.append(value.toLowerCase())
+                sb.append(value.lowercase())
             }else {
                 sb.append("_")
-                sb.append(value.toLowerCase())
+                sb.append(value.lowercase())
             }
         }
     }
