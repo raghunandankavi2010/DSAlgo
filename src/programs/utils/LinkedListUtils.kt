@@ -20,8 +20,7 @@ fun LinkedList?.printList() {
     println(listStr.toString())
 }
 
-fun createList(values: List<Int>): LinkedList? {
-    if (values.isEmpty()) return null
+fun createList(values: List<Int>): LinkedList {
     val head = LinkedList(values.first())
     var current = head
     for (i in 1 until values.size) {
