@@ -1,10 +1,7 @@
 package programs.algoexpert
 
+import programs.utils.BinaryTree
 
-class BinaryTree(val value: Int) {
-    var left: BinaryTree? = null
-    var right: BinaryTree? = null
-}
 
 fun main() {
 

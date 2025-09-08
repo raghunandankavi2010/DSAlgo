@@ -1,5 +1,7 @@
 package programs.algoexpert
 
+import programs.utils.BinaryTree
+
 // Using a data class is more idiomatic in Kotlin for classes that primarily hold data.
 data class TreeInfo(
     val isBST: Boolean,
