@@ -2,11 +2,11 @@ package programs.leetcode
 
 fun main() {
     val array = intArrayOf(1,5,1,1,6,4)
-    wiggleSort(array)
+    print("Wiggle sorted array = ${wiggleSort(array).contentToString()}")
 }
 
 
-fun wiggleSort(nums: IntArray): Unit {
+private fun wiggleSort(nums: IntArray): IntArray {
 
     val sortedArray = nums.sortedArray()
     val n = nums.size
@@ -24,6 +24,6 @@ fun wiggleSort(nums: IntArray): Unit {
         }
     }
 
-    println(nums.joinToString(" "))
+    return nums
 
 }
