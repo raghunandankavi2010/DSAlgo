@@ -1,7 +1,5 @@
 package programs.leetcode
 
-import kotlin.math.max
-
 fun main() {
     val input = intArrayOf(1,2,3)
     println("Max Profit for robbing non adjacent houses ${rob(input)}")
