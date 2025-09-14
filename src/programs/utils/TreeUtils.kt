@@ -4,3 +4,8 @@ class BinaryTree(val value: Int) {
     var left: BinaryTree? = null
     var right: BinaryTree? = null
 }
+
+class TreeNode(var `val`: Int) {
+    var left: TreeNode? = null
+    var right: TreeNode? = null
+}
