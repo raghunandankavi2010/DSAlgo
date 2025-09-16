@@ -8,7 +8,7 @@ fun main() {
 }
 
 
-fun minDistance(word1: String, word2: String): Int {
+private fun minDistance(word1: String, word2: String): Int {
     val m = word1.length
     val n = word2.length
     val dp = Array(m + 1) { IntArray(n + 1) }
