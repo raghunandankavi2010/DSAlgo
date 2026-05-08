@@ -48,7 +48,7 @@ private fun jumGame2Greedy(nums: IntArray): Int {
     var res = 0
     while (r < nums.size - 1) {
         for (i in l.. r) {
-            far = max (far, i + nums[i])
+            far = far.coerceAtLeast( i + nums[i])
         }
         l = r + 1
         r = far
@@ -75,7 +75,7 @@ private fun jumpGame2(nums: IntArray): Int {
 
     for (i in 0 until nums.size - 1) {
 
-        far = max(far, i + nums[i])
+        far = far.coerceAtLeast( i + nums[i])
         if (end == i) {
             jumps++
             end = far
