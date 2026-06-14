@@ -1,6 +1,6 @@
 package programs.leetcode
 
-import java.util.*
+import java.util.PriorityQueue
 
 /*
  * This was a hard problem. Getting the intution was hard. I was thinking why heaps
