@@ -52,6 +52,7 @@ private fun findProductWithDivision(array: IntArray) {
 }
 
 private fun findProductsWithZeros(array: IntArray) {
+    var ans = mutableListOf<Int>()
     val productArray = IntArray(array.size) { 0 }
     var isZeros = false
     var countZeros = 0

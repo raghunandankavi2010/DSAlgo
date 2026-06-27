@@ -33,6 +33,7 @@ package programs.arrays
  *
  * */
 fun main() {
+    intArrayOf()
     val nums = arrayOf(1,2,3,4)
 
     val outputArray = IntArray(nums.size) {0}

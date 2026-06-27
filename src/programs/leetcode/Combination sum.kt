@@ -57,8 +57,8 @@ import java.util.*
  * 1 <= target <= 40
  */
 fun main() {
-    val arr = arrayOf(10,1,2,7,6,1,5)
-    val target = 8
+    val arr = arrayOf(2,3,6,7)
+    val target = 7
     val intArray = arr.toIntArray()
     val result = combinationSum(intArray, target)
     result.forEach {
@@ -72,7 +72,7 @@ val list: MutableList<MutableList<Int>> = mutableListOf()
 fun combinationSum(candidates: IntArray, target: Int): List<List<Int>> {
     val temp: MutableList<Int> = mutableListOf()
     Arrays.sort(candidates)
-    combinationSumHelper2(list, temp, candidates, 0, target)
+    combinationSumHelper(list, temp, candidates, 0, target)
     return list
 }
 
